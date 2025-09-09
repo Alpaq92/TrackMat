@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TrackMat</string>
+    <string name="action_space">com.naviq.trackmat</string>
+    <string name="permission_missing">Permissions are missing</string>
+    <string name="app_ok">OK</string>
+    <string name="app_cancel">Cancel</string>
+    <string name="distance_notification">Tracked distances</string>
+    <string name="distance_blank_text">0.00 - 0.00 (0.00) [0.00]</string>
+    <string name="missing_location_permissions">Missing location tracking permissions</string>
+    <string name="gps_disabled">GPS is disabled</string>
+</resources>

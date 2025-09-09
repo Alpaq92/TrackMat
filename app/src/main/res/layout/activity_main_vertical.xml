@@ -1,0 +1,95 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:scale_base_height="2220"
+        app:scale_base_width="1080">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:scale_height="2220"
+            app:scale_width="1080">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_margin="30dp">
+                <ImageButton android:id="@+id/playPauseButton"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_play"
+                    android:background="@color/green"
+                    android:layout_margin="10dp"
+                    android:onClick="onPlayPause"/>
+                <ImageButton android:id="@+id/stopButton"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_stop"
+                    android:background="@color/red"
+                    android:layout_margin="10dp"
+                    android:onClick="onStop"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fullDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="105dp"
+                android:textStyle="bold"
+                android:text="0.00" />
+
+            <TextView
+                android:id="@+id/partDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="85dp"
+                android:textStyle="bold"
+                android:text="0.00" />
+
+            <TextView android:id="@+id/partDistanceBackup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="60dp"
+                android:layout_marginTop="-15dp"
+                android:text="0.00"/>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_margin="40dp">
+                <ImageButton android:id="@+id/clearButton"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_close"
+                    android:background="@color/red"
+                    android:layout_margin="10dp"
+                    android:onClick="onClear"/>
+                <ImageButton android:id="@+id/undoButton"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_undo"
+                    android:background="@color/green"
+                    android:layout_margin="10dp"
+                    android:onClick="onUndo"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</FrameLayout>
