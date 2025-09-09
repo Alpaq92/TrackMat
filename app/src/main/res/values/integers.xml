@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="default_frequency">2</integer>
+    <integer name="min_frequency">2</integer>
+    <integer name="max_frequency">100</integer>
+    <integer name="default_tolerance">30</integer>
+    <integer name="min_tolerance">1</integer>
+    <integer name="max_tolerance">1000</integer>
+</resources>

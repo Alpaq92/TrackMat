@@ -1,11 +1,23 @@
 <resources>
-    <string name="app_name">TrackMat</string>
-    <string name="action_space">com.naviq.trackmat</string>
-    <string name="permission_missing">Brakuje uprawnień</string>
+    <string name="permission_missing">Brak uprawnień</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Anuluj</string>
-    <string name="distance_notification">Zmierzone trasy</string>
-    <string name="distance_blank_text">0.00 - 0.00 (0.00) [0.00]</string>
+    <string name="distance_notification">Zmierzony dystans</string>
     <string name="missing_location_permissions">Brakuje uprawnień do odczytu lokalizacji urządzenia</string>
     <string name="gps_disabled">GPS jest wyłączony</string>
+    <string name="total_distance">Całkowity dystans</string>
+    <string name="current_distance">Bieżący dystans</string>
+    <string name="edit_new_values">Wprowadź nowe wartości</string>
+    <string name="preferences">Opcje</string>
+    <string name="unit_preference_title">Jednostki</string>
+    <string name="unit_preference_summary">Wybierz jednostki pomiaru dystansu</string>
+    <string name="frequency_preference_title">Częstość</string>
+    <string name="frequency_preference_summary">Ustaw częstość aktualizacji lokalizacji (w sekundach)</string>
+    <string name="tolerance_preference_title">Tolerancja błędu lokalizacji</string>
+    <string name="tolerance_preference_summary">Ustaw tolerancję błędu lokalizacji (w metrach)</string>
+    <string name="help_preference_title">Pomoc</string>
+    <string name="help_preference_summary">Przejdź do strony domowej projektu</string>
+    <string name="restore_preference_title">Przywróć</string>
+    <string name="restore_preference_summary">Resetuj ustawienia do wartości domyślnych</string>
+    <string name="restore_confirm">Potwierdź reset ustawień  do wartości domyślnych</string>
 </resources>

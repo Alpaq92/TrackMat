@@ -43,4 +43,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2'
     implementation 'com.ssomai:android.scalablelayout:2.1.6'
+    implementation "androidx.preference:preference-ktx:1.2.1"
+    implementation 'com.vanniktech:vntnumberpickerpreference:1.0.0'
 }

@@ -2,8 +2,9 @@ package com.naviq.trackmat
 
 import android.location.Location
 
+
 object DistanceCalculator {
-    fun Calculate(loc1: Location, loc2: Location): Float {
+    fun calculate(loc1: Location, loc2: Location): Float {
         return loc1.distanceTo(loc2)
     }
 

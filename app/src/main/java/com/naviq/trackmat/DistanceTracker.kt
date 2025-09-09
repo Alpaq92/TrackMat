@@ -1,7 +1,7 @@
 package com.naviq.trackmat
 
 import android.location.Location
-import android.util.Log
+
 
 class DistanceTracker private constructor() {
     companion object {
@@ -16,18 +16,16 @@ class DistanceTracker private constructor() {
     }
 
     var currentLocation: Location? = null
-    var fullDistance: Double = 0.0
-    var partDistance: Double = 0.0
-    var partDistanceBackup: Double = 0.0
+    var totalDistance: Double = 0.0
+    var currentDistance: Double = 0.0
 
     fun addDistance(newLocation: Location) {
         if(currentLocation != null) {
-            var newDistance = DistanceCalculator.Calculate(currentLocation!!, newLocation)
+            val newDistance = DistanceCalculator.calculate(currentLocation!!, newLocation)
 
-            if(newDistance != Float.NaN && newDistance != Float.POSITIVE_INFINITY
-                && newDistance != Float.NEGATIVE_INFINITY) {
-                fullDistance += newDistance
-                partDistance += newDistance
+            if(newDistance != Float.POSITIVE_INFINITY && newDistance != Float.NEGATIVE_INFINITY) {
+                totalDistance += newDistance
+                currentDistance += newDistance
             }
         }
 
@@ -37,22 +35,15 @@ class DistanceTracker private constructor() {
     fun resetDistances() {
         currentLocation = null
 
-        fullDistance = 0.0
-        partDistance = 0.0
-        partDistanceBackup = 0.0
+        totalDistance = 0.0
+        currentDistance = 0.0
     }
 
     fun clearPartDistance() {
-        partDistanceBackup = partDistance
-        partDistance = 0.0
+        currentDistance = 0.0
     }
 
     fun clearLocation() {
         currentLocation = null
-    }
-
-    fun undoPartDistance() {
-        partDistance = partDistanceBackup
-        partDistanceBackup = 0.0
     }
 }

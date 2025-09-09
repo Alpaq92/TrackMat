@@ -12,7 +12,7 @@
         app:scale_base_height="2220"
         app:scale_base_width="1080">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -20,76 +20,97 @@
             app:scale_height="2220"
             app:scale_width="1080">
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:layout_margin="30dp">
-                <ImageButton android:id="@+id/playPauseButton"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_play"
-                    android:background="@color/green"
-                    android:layout_margin="10dp"
-                    android:onClick="onPlayPause"/>
-                <ImageButton android:id="@+id/stopButton"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_stop"
-                    android:background="@color/red"
-                    android:layout_margin="10dp"
-                    android:onClick="onStop"/>
+                app:scale_height="2220"
+                app:scale_width="1080">
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_margin="30dp">
+                    <ImageButton android:id="@+id/playPauseButton"
+                        android:layout_width="162dp"
+                        android:layout_height="120dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_play"
+                        android:background="@color/green"
+                        android:layout_margin="10dp"
+                        android:onClick="onPlayPause"/>
+                    <ImageButton android:id="@+id/stopButton"
+                        android:layout_width="162dp"
+                        android:layout_height="120dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_stop"
+                        android:background="@color/red"
+                        android:layout_margin="10dp"
+                        android:onClick="onStop"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/totalDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="95dp"
+                    android:textStyle="bold"
+                    android:text="0.00" />
+
+                <TextView
+                    android:id="@+id/currentDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="95dp"
+                    android:textStyle="bold"
+                    android:text="0.00" />
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_margin="40dp">
+                    <ImageButton android:id="@+id/clearButton"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_split"
+                        android:background="@color/yellow"
+                        android:layout_margin="10dp"
+                        android:onClick="onClear"/>
+                    <ImageButton android:id="@+id/editButton"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_edit"
+                        android:background="@color/green"
+                        android:layout_margin="10dp"
+                        android:onClick="onEdit"/>
+                    <ImageButton android:id="@+id/settingsButton"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_settings"
+                        android:background="@color/blue"
+                        android:layout_margin="10dp"
+                        android:onClick="onSettings"/>
+                </LinearLayout>
             </LinearLayout>
 
             <TextView
-                android:id="@+id/fullDistance"
+                android:id="@+id/displayUnits"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="105dp"
+                android:layout_gravity="center"
+                android:textSize="40dp"
+                android:layout_marginTop="3dp"
                 android:textStyle="bold"
-                android:text="0.00" />
+                android:text="@string/default_unit" />
 
-            <TextView
-                android:id="@+id/partDistance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="85dp"
-                android:textStyle="bold"
-                android:text="0.00" />
-
-            <TextView android:id="@+id/partDistanceBackup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="60dp"
-                android:layout_marginTop="-15dp"
-                android:text="0.00"/>
-
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_margin="40dp">
-                <ImageButton android:id="@+id/clearButton"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_close"
-                    android:background="@color/red"
-                    android:layout_margin="10dp"
-                    android:onClick="onClear"/>
-                <ImageButton android:id="@+id/undoButton"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_undo"
-                    android:background="@color/green"
-                    android:layout_margin="10dp"
-                    android:onClick="onUndo"/>
-            </LinearLayout>
-        </LinearLayout>
+        </FrameLayout>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </FrameLayout>

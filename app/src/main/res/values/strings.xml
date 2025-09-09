@@ -1,11 +1,34 @@
 <resources>
-    <string name="app_name">TrackMat</string>
-    <string name="action_space">com.naviq.trackmat</string>
+    <string name="app_name" translatable="false">TrackMat</string>
+    <string name="action_space" translatable="false">com.naviq.trackmat</string>
     <string name="permission_missing">Permissions are missing</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Cancel</string>
     <string name="distance_notification">Tracked distances</string>
-    <string name="distance_blank_text">0.00 - 0.00 (0.00) [0.00]</string>
+    <string name="distance_blank_text" translatable="false">0.00 (0.00) [0.00]</string>
     <string name="missing_location_permissions">Missing location tracking permissions</string>
     <string name="gps_disabled">GPS is disabled</string>
+    <string name="total_distance">Total distance</string>
+    <string name="current_distance">Current distance</string>
+    <string name="edit_new_values">Please provide new values</string>
+    <string name="id_key" translatable="false">id</string>
+    <string name="preferences">Preferences</string>
+    <string name="unit_preference" translatable="false">unitPreference</string>
+    <string name="unit_preference_title">Units</string>
+    <string name="unit_preference_summary">Select units for measured distance</string>
+    <string name="frequency_preference" translatable="false">frequencyPreference</string>
+    <string name="frequency_preference_title">Frequency</string>
+    <string name="frequency_preference_summary">Set frequency of location checks (in seconds)</string>
+    <string name="tolerance_preference" translatable="false">tolerancePreference</string>
+    <string name="tolerance_preference_title">Error tolerance</string>
+    <string name="tolerance_preference_summary">Set error tolerance of location checks (in meters)</string>
+    <string name="help_preference" translatable="false">help</string>
+    <string name="help_preference_title">Help</string>
+    <string name="help_preference_summary">Redirect to project\'s homepage</string>
+    <string name="restore_preference" translatable="false">restore</string>
+    <string name="restore_preference_title">Restore</string>
+    <string name="restore_preference_summary">Reset all preferences to the defaults</string>
+    <string name="restore_confirm">Please confirm if you want to restore preferences to the defaults</string>
+    <string name="default_decimal_format" translatable="false">0.00</string>
+    <string name="default_unit" translatable="false">km</string>
 </resources>

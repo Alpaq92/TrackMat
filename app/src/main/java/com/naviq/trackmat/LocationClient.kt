@@ -18,8 +18,9 @@ import kotlinx.coroutines.launch
 class LocationClient(
     private val context: Context,
     private val client: FusedLocationProviderClient) {
+
     @SuppressLint("MissingPermission")
-    fun getLocationUpdates(interval: Long): Flow<Location> {
+    fun getLocationUpdates(interval: Long = 2000L, tolerance: Long = 30L): Flow<Location> {
         val locationFlow = callbackFlow {
             if(!context.hasLocationPermission()) {
                 throw LocationException()
@@ -32,7 +33,7 @@ class LocationClient(
                 throw LocationException()
             }
 
-            val request = LocationRequest.create()
+            val locationRequest = LocationRequest.create()
                 .setInterval(interval)
                 .setFastestInterval(interval)
                 .setPriority(PRIORITY_HIGH_ACCURACY)
@@ -41,15 +42,14 @@ class LocationClient(
                 override fun onLocationResult(result: LocationResult) {
                     super.onLocationResult(result)
 
-                    var location = result.locations.minBy { it.accuracy }
-                    if(location != null && location.accuracy < 30) {
+                    val location = result.locations.minBy { it.accuracy }
+                    if(location != null && location.accuracy < tolerance) {
                         launch { send(location) }
                     }
                 }
             }
 
-            client.requestLocationUpdates(
-                request, locationCallback, Looper.getMainLooper())
+            client.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper())
 
             awaitClose {
                 client.removeLocationUpdates(locationCallback)

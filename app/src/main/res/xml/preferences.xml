@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        android:key="@string/unit_preference"
+        android:title="@string/unit_preference_title"
+        android:summary="@string/unit_preference_summary"
+        android:dialogTitle="@string/unit_preference_summary"
+        android:defaultValue="@string/default_unit"
+        android:entries="@array/units"
+        android:entryValues="@array/units" />
+    <com.naviq.trackmat.NumberPickerPreference
+        android:key="@string/frequency_preference"
+        android:title="@string/frequency_preference_title"
+        android:summary="@string/frequency_preference_summary"
+        android:dialogTitle="@string/frequency_preference_summary"
+        android:defaultValue="@integer/default_frequency"
+        app:vnt_minValue="@integer/min_frequency"
+        app:vnt_maxValue="@integer/max_frequency"
+        app:vnt_setWrapSelectorWheel="true"/>
+    <com.naviq.trackmat.NumberPickerPreference
+        android:key="@string/tolerance_preference"
+        android:title="@string/tolerance_preference_title"
+        android:summary="@string/tolerance_preference_summary"
+        android:dialogTitle="@string/tolerance_preference_summary"
+        android:defaultValue="@integer/default_tolerance"
+        app:vnt_minValue="@integer/min_tolerance"
+        app:vnt_maxValue="@integer/max_tolerance"
+        app:vnt_setWrapSelectorWheel="true"/>
+    <Preference
+        android:title="@string/help_preference_title"
+        android:summary="@string/help_preference_summary">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/Alpaq92/TrackMat" />
+    </Preference>
+    <Preference
+        android:key="@string/restore_preference"
+        android:title="@string/restore_preference_title"
+        android:summary="@string/restore_preference_summary" />
+</PreferenceScreen>
