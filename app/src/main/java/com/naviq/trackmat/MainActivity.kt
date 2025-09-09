@@ -267,7 +267,7 @@ class MainActivity : AppCompatActivity() {
             for (key in intent.extras!!.keySet()) {
                 val text = intent.getStringExtra(key)
 
-                if (text != null) {
+                if (!text.isNullOrBlank()) {
                     val id = resources.getIdentifier(key, resources.getString(R.string.id_key), context.packageName)
                     val textView = findViewById<TextView>(id)
 
