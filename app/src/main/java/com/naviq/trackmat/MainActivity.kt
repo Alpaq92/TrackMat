@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         updateValues()
+        updateButton(LocationService.isRunning)
     }
 
     override fun onStop() {
@@ -139,10 +140,7 @@ class MainActivity : AppCompatActivity() {
         applicationContext.startService(intent)
         DistanceTracker.getInstance().resetDistances()
 
-        val green = resources.getColor(R.color.green)
-        val playPauseButton = findViewById<ImageButton>(R.id.playPauseButton)
-        playPauseButton.setImageResource(R.drawable.ic_play)
-        playPauseButton.setBackgroundColor(green)
+        updateButton(false)
     }
 
     fun onClear(view: View) {
@@ -214,6 +212,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        updateButton(isTracking)
+    }
+
+    private fun updateButton(isTracking: Boolean) {
         val green = resources.getColor(R.color.green)
         val yellow = resources.getColor(R.color.yellow)
 
